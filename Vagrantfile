@@ -72,11 +72,9 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", name: "root privisioning", inline: <<-SHELL
-    # https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
-    curl -sL https://deb.nodesource.com/setup_6.x | bash -
-
     apt-get update
-    apt-get install -y build-essential git nodejs python3-pip
+    apt-get upgrade
+    apt-get install -y build-essential git  python3-pip
 
     pip3 install --upgrade pip virtualenvwrapper
   SHELL
