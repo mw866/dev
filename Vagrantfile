@@ -35,6 +35,16 @@ Vagrant.configure("2") do |config|
   # Jekyll
   config.vm.network "forwarded_port", guest: 4000, host: 4000
 
+  # BitlBee
+  config.vm.network "forwarded_port", guest: 6667, host: 6667
+
+  #lisod server
+  config.vm.network "forwarded_port", guest: 9999, host: 9999
+
+  #gdbserver
+  config.vm.network "forwarded_port", guest: 7777, host: 7777
+
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
